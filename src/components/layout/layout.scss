@@ -1,0 +1,26 @@
+.layout {
+  .background-container {
+    position: relative;
+
+    .background {
+      background-color: aqua;
+      height: 80px;
+      width: 100%;
+      opacity: 0.2;
+    }
+
+    .title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      text-align: center;
+      font-size: 4.5rem !important;
+
+      @media (max-width: 768px) {
+        font-size: 2rem !important;
+      }
+    }
+  }
+}
