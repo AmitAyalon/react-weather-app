@@ -5,15 +5,11 @@ class WeatherStore {
   weatherApi;
   unitsMode = 'metric';
 
-  weatherData;
-  selectedCity;
-  selectedCityGeocoding = {
-    lat: 0,
-    lon: 0,
-  };
-
-  isLoading;
-  error;
+  weatherData = null;
+  selectedCity = '';
+  selectedCityGeocoding = { lat: null, lon: null };
+  isLoading = false;
+  error = null;
 
   constructor() {
     makeAutoObservable(this);
@@ -28,6 +24,7 @@ class WeatherStore {
         this.selectedCityGeocoding.lat,
         this.selectedCityGeocoding.lon
       );
+      console.log(res.data);
       this.weatherData = res.data;
     } catch (err) {
       console.log(err);
